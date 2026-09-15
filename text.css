@@ -1,0 +1,43 @@
+.h1 {
+  font-size: 48px;
+  color: #281d26;
+  font-family: "Playfair Display", serif;
+}
+
+.h2 {
+  font-size: 32px;
+  color: #281d26;
+}
+
+.h3 {
+  font-size: 24px;
+  padding-top: 8px;
+}
+
+.h4 {
+  font-size: 16px;
+}
+
+.h4-inline {
+  font-size: 16px;
+  padding-top: 4px;
+  font-family: "Playfair Display", serif;
+}
+
+.question_answer {
+  font-size: 16px;
+  margin: 0px 24px;
+  padding-top: 4px;
+}
+
+#faq .h3 {
+  text-align: left;
+  align-self: baseline;
+  margin-left: 24px;
+}
+
+#faq .question_answer {
+  text-align: left;
+  align-self: baseline;
+  margin-bottom: 16px;
+}

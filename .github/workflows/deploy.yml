@@ -1,0 +1,51 @@
+name: Deploy andyanderin.com to S3
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: andyanderin-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out website
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Authenticate to AWS
+        uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a # v4
+        with:
+          role-to-assume: arn:aws:iam::669908843053:role/GitHubActionsAndyanderinWebsite
+          aws-region: us-east-1
+          allowed-account-ids: '669908843053'
+          role-duration-seconds: 900
+          role-session-name: andyanderin-${{ github.run_id }}
+      - name: Sync website content
+        run: |
+          aws s3 sync . s3://andyanderin.com \
+            --exclude '.git/*' --exclude '.github/*' --exclude 'deploy/*' \
+            --only-show-errors
+      - name: Check live HTTPS site
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 5 --retry-all-errors --max-time 20 \
+            https://andyanderin.com/ | grep -Fq '<title>'
+          curl --fail --silent --show-error --head --retry 5 --retry-all-errors --max-time 20 \
+            https://andyanderin.com/index.js | grep -Fiq 'content-type:'
+          headers=$(curl --fail --silent --show-error --head --retry 5 --retry-all-errors --max-time 20 https://andyanderin.com/)
+          grep -Fiq 'strict-transport-security: max-age=86400' <<< "$headers"
+          grep -Fiq 'x-content-type-options: nosniff' <<< "$headers"
+          grep -Fiq 'referrer-policy: no-referrer' <<< "$headers"

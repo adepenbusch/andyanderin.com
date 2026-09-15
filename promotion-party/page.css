@@ -1,0 +1,330 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 16px;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 0px 0px 32px 0px;
+}
+
+.rsvpModal .detailsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 0px 0px 32px 0px;
+  width: 900px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.heroImage {
+  flex-grow: 1;
+  width: 250px;
+  max-width: 700px;
+}
+
+.heroTitle {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+  z-index: 1;
+  font-size: 3rem;
+  color: #eef3ef;
+}
+
+.section {
+  margin: 64px 32px 0px 32px;
+  padding: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  max-width: 900px;
+}
+
+.section:last-of-type {
+  margin: 64px 32px;
+}
+
+button {
+  height: min-content;
+  width: min-content;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border: 1px solid black;
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s;
+}
+
+.hoverButton {
+  position: fixed;
+  bottom: 5%;
+  left: calc(50% - 64px);
+  cursor: pointer;
+  border-radius: 32px;
+  padding: 8px 64px;
+}
+
+.rsvpModal {
+  padding-top: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  max-height: 45%;
+  max-width: 900px;
+  left: calc(50% - 450px);
+  z-index: 2;
+  background-color: white;
+  box-shadow: 0px 1px 10px 2px #ccc;
+}
+
+.rsvpModalClose {
+  max-height: 20px;
+  max-width: 20px;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+
+.rsvpModalSubmit {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: black;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  min-height: 40px;
+  width: 40%;
+  max-width: 400px;
+  border: none;
+  border-bottom: solid lightgray;
+  margin-right: 16px;
+  accent-color: black;
+}
+
+input::last-of-type {
+  margin-right: 0px;
+}
+
+.inlineImage {
+  max-height: 554px;
+  padding: 12px 12px;
+}
+
+.radioButton {
+  min-height: 10px;
+  height: 20px;
+  width: 48px;
+  margin-bottom: auto;
+  margin-top: 16px;
+}
+
+.rsvpText {
+  padding-right: 48px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+  }
+
+  .section {
+    margin: 64px 8px 0px 8px;
+    padding: 16px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    text-align: center;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .heroImage {
+    width: inherit;
+  }
+
+  .section:last-of-type {
+    margin: 64px 8px;
+  }
+
+  .hoverButton {
+    bottom: 0;
+    padding: 16px 32px;
+  }
+
+  .rsvpModal {
+    padding-top: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    max-height: 80%;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0px 10px 10px 10px #ccc, 0px 10px 10px 10px #ccc;
+    overflow-y: scroll;
+  }
+
+  .rsvpModalClose {
+    max-height: 20px;
+    max-width: 20px;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+  }
+
+  .rsvpModalSubmit {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: black;
+    border: 1px solid black;
+    margin-left: auto;
+  }
+
+  .rsvpModal .detailsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0px 0px 24px 0px;
+    width: 100%;
+  }
+
+  .rsvpModal .inputRow {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .rsvpModal .inputRow:last-of-type {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  .radioButton {
+    min-height: 10px;
+    height: 20px;
+    width: 48px;
+    margin-bottom: 0;
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+
+  .rsvpText {
+    padding-right: 0px;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1280px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroImage {
+    width: inherit;
+  }
+
+  .section {
+    margin: 64px 8px 0px 8px;
+    padding: 16px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    width: 80%;
+    max-width: 70%;
+    text-align: center;
+  }
+
+  .section:last-of-type {
+    margin: 64px 8px;
+  }
+
+  .radioButton {
+    min-height: 10px;
+    height: 20px;
+    width: 48px;
+    margin-bottom: auto;
+    margin-top: 16px;
+  }
+  .rsvpText {
+    padding-right: 48px;
+  }
+}

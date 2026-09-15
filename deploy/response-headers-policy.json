@@ -1,0 +1,10 @@
+{
+  "Name": "andyanderin-security-headers",
+  "Comment": "Security headers for the andyanderin.com website",
+  "SecurityHeadersConfig": {
+    "StrictTransportSecurity": {"Override": true, "AccessControlMaxAgeSec": 86400, "IncludeSubdomains": false, "Preload": false},
+    "ContentTypeOptions": {"Override": true},
+    "ReferrerPolicy": {"Override": true, "ReferrerPolicy": "no-referrer"},
+    "ContentSecurityPolicy": {"Override": true, "ContentSecurityPolicy": "default-src 'self'; base-uri 'self'; frame-ancestors 'none'"}
+  }
+}
