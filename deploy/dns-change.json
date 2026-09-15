@@ -1,0 +1,9 @@
+{
+  "Comment": "Route andyanderin.com to HTTPS CloudFront distribution",
+  "Changes": [
+    {"Action":"UPSERT","ResourceRecordSet":{"Name":"andyanderin.com.","Type":"A","AliasTarget":{"HostedZoneId":"Z2FDTNDATAQYW2","DNSName":"dxstfoassy45s.cloudfront.net.","EvaluateTargetHealth":false}}},
+    {"Action":"UPSERT","ResourceRecordSet":{"Name":"andyanderin.com.","Type":"AAAA","AliasTarget":{"HostedZoneId":"Z2FDTNDATAQYW2","DNSName":"dxstfoassy45s.cloudfront.net.","EvaluateTargetHealth":false}}},
+    {"Action":"UPSERT","ResourceRecordSet":{"Name":"www.andyanderin.com.","Type":"A","AliasTarget":{"HostedZoneId":"Z2FDTNDATAQYW2","DNSName":"dxstfoassy45s.cloudfront.net.","EvaluateTargetHealth":false}}},
+    {"Action":"UPSERT","ResourceRecordSet":{"Name":"www.andyanderin.com.","Type":"AAAA","AliasTarget":{"HostedZoneId":"Z2FDTNDATAQYW2","DNSName":"dxstfoassy45s.cloudfront.net.","EvaluateTargetHealth":false}}}
+  ]
+}
